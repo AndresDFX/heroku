@@ -1,5 +1,5 @@
 # oTree-may-overwrite-this-file
 # IF YOU MODIFY THIS FILE, remove these comments. 
 # otherwise, oTree will automatically overwrite it.
-otree==5.4.6
+otree==5.7.2
 psycopg2==2.9.1

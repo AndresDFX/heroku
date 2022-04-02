@@ -1,0 +1,24 @@
+{% extends "informality_experiment_D1/base/global.html" %}
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    Pagos Fase {{phase_label}}
+{% endblock %}
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+
+{% block content %}
+    {{ super() }}
+    
+    Muchas gracias por su esfuerzo, debido a este has conseguido realizar un total de 
+    <b> {{ answer_correct_phase }} </b> tareas correctas. 
+    Teniendo en cuenta que el valor de su moneda es de {{ token_value_phase }}, 
+    su pago para esta Fase es de: ${{payment_phase}}
+
+    {% next_button %}
+        
+{% endblock %}

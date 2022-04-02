@@ -1,0 +1,34 @@
+{% extends "informality_experiment_E1/base/global.html" %}
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    Urna {{urn_decision_label}}
+{% endblock %}
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+
+{% block content %}
+    {{ super() }}
+    
+    Escogiste la Urna <b>{{urn_decision_label}}</b>.<br><br>
+
+    El programa ha sacado una moneda al <b>azar </b>de valor: <H1> <font color="orange">{{num_random}}</font></H1><br><br>
+
+    Por lo tanto, ese será tu pago por respuesta correcta en las próximas cinco rondas.<br><br>
+    
+    En las próximas cinco rondas leerás algunos párrafos que traen noticias o información relevante para algunos proyectos. 
+    Estos textos han sido transcritos, pero por la calidad de la imagen original, es posible que haya algunos errores. 
+    Necesitamos que nos ayudes a contar el número de errores que hay entre la transcripción y el texto de la imagen. 
+    Cuanto más te acerques al número real de errores, mejor será tu desempeño:
+    
+    <ul>
+        <li><b>Te lo valdremos como respuesta correcta si identificas el número exacto de errores, o si sólo te equivocas <font color="orange">por uno o dos</font> valores.</b></li>
+    </ul>
+    
+    {% next_button %}
+        
+{% endblock %}

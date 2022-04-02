@@ -1,0 +1,67 @@
+{% extends "real_effort_numbers_t_t/base/global.html" %} 
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    CONSENTIMIENTO INFORMADO
+{% endblock %}
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+
+    <div class="wrapper instructions">
+        <p align="justify" >
+            Señor(a),<br><br>
+
+            La siguiente actividad es parte de un proyecto con fines académicos, 
+            realizado por la Universidad del Valle en el marco de la convocatoria 792 del Programa Colombia Científica. 
+            Nuestro objetivo es estudiar el comportamiento de las personas y sus decisiones en algunos contextos.<br><br>
+            
+            Estos son los datos de la actividad:<br>
+
+            <ul>
+                <li>Duración aproximada: 1 hora</li>
+                <li>Participantes de todo el ejercicio: 400</li>
+                <li>Sus pagos: <b>entre $5,000 y  $50,000.</b> Sólo para quienes completen las <b>cuatro etapas</b> de la actividad. Por llegar a tiempo y completar el ejercicio, tiene garantizados $5,000. 
+                    El resto dependerá de sus decisiones durante la actividad.
+                    Forma de pago: <b>transferencia por Nequi</b> entre uno y siete días hábiles. </li>
+                <li>Si usted no ha enviado el certificado de Nequi , por favor, al terminar la actividad, <b>envíenos</b> el número de <b>identificación temporal</b> que se le envió al correo y 
+                    el <b>certificado de su cuenta</b> al correo <a href="mailto:investigacion.esocials@correounivalle.edu.co">investigacion.esocials@correounivalle.edu.co</a> o a nuestro WhatsApp 3167607211.</li>
+            </ul>
+
+            La participación es <b>voluntaria.</b> El estudio garantiza la <b>confidencialidad</b> de sus respuestas. 
+            Los participantes podrán decidir terminar la actividad <b>en cualquier momento</b>, pero sólo 
+            podrán recibir su pago si llegan hasta el final de la misma. Adicional a esto, le aseguramos 
+            que no correrán <b>ningún riesgo</b> participando en esta actividad, pues lo único que se le pedirá 
+            es completar algunas actividades que serán virtuales, anónimas y confidenciales.<br><br>
+
+            Usted tiene derecho a conocer información relacionada a este estudio una vez esté 
+            procesada y publicada.  Datos de contacto:<br><br>
+
+            <ul>
+                <li>Directora del proyecto, Lina María Restrepo Plaza (<a href="mailto:investigacion.esocials@correounivalle.edu.co">investigacion.esocials@correounivalle.edu.co</a>)</li> 
+                <li>Comité de Ética de la Universidad del Valle (<a href="mailto:eticasalud@correounivalle.edu.co">eticasalud@correounivalle.edu.co</a>). 
+                    Teléfonos 3212100 ext. 3161, 3212324, 5185677 o 5185670, o por WhatsApp 3167607211.</li>
+                
+            </ul>
+           
+            Si está de acuerdo con la anterior información y con que se utilicen sus respuestas con fines 
+            meramente académicos, para este y otros estudios, por favor escriba el código de 
+            identificación que le enviamos por correo y acepte los términos de esta actividad.<br><br>
+
+            Si desea, descargue una copia del consentimiento informado <a href="https://drive.google.com/file/d/1qUJpc24Ccc1x0YLUo7bomDlZzHhPdrLw/view">aquí</a>.<br><br>
+            
+            {% formfield player.num_temporal %}
+            <p>¿Acepta los términos de esta actividad?</p>
+                <div>
+                    <button name="accepts_terms" value="True">Sí</button>
+                    <button type="button" name="accepts_terms" onclick="location.href='https://google.com';" value="False">No</button>
+                </div>
+        </p>
+
+    </div>
+
+{% endblock %}

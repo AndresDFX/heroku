@@ -1,0 +1,54 @@
+{% extends "informality_experiment_C2/base/global.html" %}
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    Instrucciones Etapa 1
+{% endblock %}
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+
+{% block content %}
+    {{ super() }}
+    
+    Por favor, lea <b>atentamente</b> las siguientes indicaciones. Usted tomará mejores decisiones si comprende bien 
+    la siguiente información:<br><br>
+
+    Tenemos unos textos que han sido digitalizados pero muchos de ellos presentan problemas porque quienes digitaron 
+    cometieron errores. Durante 20 rondas usted nos ayudará a identificar <b>cuántas inconsistencias o errores ortográficos hay en cada uno de los textos.</b> 
+    Cada ronda dura un minuto y contiene <b>5 textos</b>. Le pagaremos según el número de respuestas correctas que consiga.<br><br>
+
+    El <b>pago por respuesta correcta</b> se determinará <b>AL AZAR</b> sacando monedas de una urna virtual. 
+    Esto lo haremos <b>cada 5 rondas. </b> El valor de la moneda está definido en 
+    <b>unidades monetarias (UM) y cada UM equivale a 20 pesos. </b><br><br>
+
+    <b>Su decisión:</b><br>
+    Usted <font color="orange">escoge la urna</font> de la cual sacaremos las monedas. Si por ejemplo, 
+    saliera una moneda de 5 UM, quiere decir que usted ganará 100 pesos (5UM x $20) 
+    por respuesta correcta en las próximas 5 rondas.<br>
+
+    <ul>
+        <li><b>La Urna Y:</b> tiene monedas con valores entre <font color="orange">0 UM y 10 UM.</font> Sin embargo, <font color="orange">no se sabe cuántas</font> monedas hay de cada valor.</li>
+        <li><b>La Urna Z:</b> tiene monedas con valores entre <font color="orange">2 UM y 8 UM,</font> pero tampoco se sabe cuántas monedas hay de cada una.</li>
+    </ul>
+
+    Usted deberá escoger la urna y el sistema seleccionará al azar la moneda.<br><br>
+    <p align="center"><img src="{% static 'images/1stage/urn_decision.png' %}"  style= "height: 90%; width: 90%; object-fit: cover"/></p>
+
+    <b>Ejemplo:</b> Suponga que para las primeras cinco rondas usted escogió la Urna Y y la moneda seleccionada al azar tiene 
+    un valor de 6 UM. Eso quiere decir que le pagaremos 6 UM por cada respuesta correcta en esas rondas, 
+    que en pesos serían $120 (6x$20). Si usted obtuvo 35 respuestas correctas, sus ganancias serán de 
+    120X35 = $4.200 para esas cinco rondas.<br><br>
+
+    <b>Preguntas de comprensión:</b><br><br>
+
+    Con las siguientes preguntas sólo queremos verificar si las instrucciones fueron claras para usted y no van a afectar sus pagos. 
+    Por favor, escoge la respuesta correcta para cada una de las preguntas.<br>
+
+    {% formfields %}
+    {% next_button %}
+        
+{% endblock %}

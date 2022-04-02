@@ -1,0 +1,73 @@
+{% extends "informality_experiment_A2/base/global.html" %}
+
+{# ****************************************************************************************************************** #}
+{# *** STYLES *** #}
+{# ****************************************************************************************************************** #}
+{% block styles %}
+    {{ super() }}
+    <style>
+        .row {
+            display: flex;
+        }
+            
+        .column {
+            flex: 50%;
+        }
+    </style>
+{% endblock %}
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    {% if player.round_number == 1 %}
+        Inicio Etapa 1
+    {% endif %}
+{% endblock %}
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+    {{ super() }}
+
+    <div class="row">
+        <div>
+            <p style="font-size:large;" align="center">
+                “Ya puede tomar la decisión.<br>
+                Para escoger, debes dar clic <font color="orange">SOBRE</font> la urna que prefieras”
+            </p>
+        </div>
+        <div class="column">
+            <a href="" target="_blank" class="urn" id="Y"><img src="{% static 'images/1stage/urn.png' %}" /></a>
+            <p>Urna (Y): Esta urna contiene monedas con valores de 0 UM a 8 UM.</p>
+        </div>
+        <div class="column">
+            <a href="" target="_blank" class="urn" id="Z"><img src="{% static 'images/1stage/urn.png' %}" /></a>
+            <p> Urna (Z): Esta urna contiene monedas con valores de 2 UM a 8 UM.</p>
+            
+        </div>
+    </div>
+
+    <!--Boton de siguiente (oculto) -->
+    <p>
+        <button class="otree-btn-next btn btn-primary" style="display:none;"> Siguiente</button>
+    </p>
+
+{% endblock %}
+
+{# ****************************************************************************************************************** #}
+{# *** SCRIPTS *** #}
+{# ****************************************************************************************************************** #}
+{% block scripts %}
+    <script>
+
+        //Toma el evento clic de las imagenes obtiene y envia el valor del 'id' y da clic al boton de siguiente que esta oculto
+        $(".urn").on("click", function(event) {
+            event.preventDefault();
+            liveSend($(this).attr('id'));
+            $(".otree-btn-next").click();
+        });
+
+    </script>
+{% endblock %}

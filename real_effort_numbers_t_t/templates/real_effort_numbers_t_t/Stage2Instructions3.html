@@ -1,0 +1,65 @@
+{% extends "real_effort_numbers_t_t/base/global.html" %} 
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    ¡BIENVENIDOS A LA ETAPA 2!
+{% endblock %}
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+
+    <div class="wrapper instructions">
+        <p align = "justify">
+            <b>Por favor, lea la situación de la empresa Textilesa, cuidadosamente. Usted tomará mejores decisiones 
+            si presta ATENCIÓN a la información:</b><br><br>
+
+            Textilesa es una empresa que produce textiles. María es la propietaria (Jugador Y), 
+            y está buscando quién dirija las finanzas de la empresa. Juan se ha presentado al puesto de gerente financiero 
+            (Jugador X), y María debe decidir <b>si establece</b> un contrato, o si le paga por la actividad 
+            <b>sin establecer</b> un contrato. Los contratos <b>no son gratis</b>, si María decide establecer un contrato a Juan, 
+            ella deberá pagar <b>$5,000</b> y Juan deberá pagar <b>$3,000.</b> En caso de que María decida pagarle a 
+            Juan sin establecer contrato, ninguno de los dos incurrirá en costos contractuales.<br><br>
+            
+            Textilesa afronta un desajuste contable, por lo que el trabajo de Juan en esta etapa será el 
+            de realizar restas para solucionar el problema.<br><br>
+            
+            <b>¿Cuánto ganará Juan (X) por realizar la tarea?</b><br>
+            Por este trabajo, María (Y) le pagará a Juan (X) $15,000 en 2 cuotas, de la siguiente manera:
+            <ul>
+                <li>Una primera cuota de $8,000 obligatoria y por adelantado.</li>
+                <li>La segunda cuota de $7,000 que:</li>
+                <ul>
+                    <li>Es voluntaria si María no le hace un contrato a Juan.</li>
+                    <li>Es obligatoria si María le hace un contrato a Juan.</li>
+                </ul>
+            </ul>
+
+            <b>¿Cuánto ganará María (Y)?</b><br>
+            <ul>
+                <li>Si Juan (X) logra completar {{Constants.mandatory_subtraction}} restas correctas en 10 minutos habrá ajustado la contabilidad de Textilesa, 
+                    por lo que María (jugador Y) ganará $30,000.</li>
+                <li>Si Juan (X) hace menos de {{Constants.mandatory_subtraction}} restas correctas, los pagos de María (Y) 
+                    dependerán de si ella decidió establecer un contrato:</li>
+                <ul>
+                    <li><b>Si María (Y) contrató a Juan (X):</b> Juan (X) le pagará a María una multa por incumplimiento por un valor de $30,000.</li>
+                    <li><b>Si María (Y) NO contrató a Juan (X):</b> Juan (X) no pagará nada a María (Y), y María no ganará nada.</li>
+                </ul>
+            </ul>
+            
+            <b>Resumen de las ganancias de los jugadores según la decisión de contratación.</b><br><br>
+            <p align="center"><img src="{% static 'images/ganancias_etapa2.png' %}" alt="las ganancias de la Etapa 2 para ambos jugadores" style= "width: 100%; object-fit: cover"></p>
+            
+            Las siguientes preguntas nos permiten verificar si las condiciones entre María y Juan han sido claras para usted, 
+            pues en esta etapa <b>USTED y otra persona se enfrentarán a la misma situación que María y Juan.</b> 
+            Por favor, responda:<br><br>
+            
+            {% formfields %}
+
+        </p>
+    </div>
+{% next_button %}
+{% endblock %}
